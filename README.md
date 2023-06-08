@@ -18,10 +18,10 @@ w1 c1
 wn cn
 ```
 where:
-X: Number of items
-Y: Maximum capacity
-w1 to wn: Weight of each item
-c1 to cn: Cost of each item
+- X: Number of items
+- Y: Maximum capacity
+- w1 to wn: Weight of each item
+- c1 to cn: Cost of each item
 ### Run
 
 ```
