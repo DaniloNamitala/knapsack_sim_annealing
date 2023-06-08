@@ -53,16 +53,16 @@ void plotChangeTemp(int argc, char** argv) {
   int capacity;
   Item* items = read_list(argv[1], &capacity);
   
-  Knapsack* solution1 = new Knapsack(60);
+  Knapsack* solution1 = new Knapsack(capacity);
   auto to_plot1 = simulated_annealing(100, 0.001, items, solution1);
 
-  Knapsack* solution2 = new Knapsack(60);
+  Knapsack* solution2 = new Knapsack(capacity);
   auto to_plot2 = simulated_annealing(1000, 0.001, items, solution2);
 
-  Knapsack* solution3 = new Knapsack(60);
+  Knapsack* solution3 = new Knapsack(capacity);
   auto to_plot3 = simulated_annealing(10000, 0.001, items, solution3);
 
-  Knapsack* solution4 = new Knapsack(60);
+  Knapsack* solution4 = new Knapsack(capacity);
   auto to_plot4 = simulated_annealing(100000, 0.001, items, solution4);
 
   Gnuplot gp;
@@ -80,16 +80,16 @@ void plotChangeStart(int argc, char** argv) {
   int capacity;
   Item* items = read_list(argv[1], &capacity);
   
-  Knapsack* solution1 = new Knapsack(60, std::vector<Item>({items[0], items[1], items[2]}));
+  Knapsack* solution1 = new Knapsack(capacity, std::vector<Item>({items[0], items[1], items[2]}));
   auto to_plot1 = simulated_annealing(1000, 0.001, items, solution1);
 
-  Knapsack* solution2 = new Knapsack(60, std::vector<Item>({items[7], items[10], items[20]}));
+  Knapsack* solution2 = new Knapsack(capacity, std::vector<Item>({items[7], items[10], items[20]}));
   auto to_plot2 = simulated_annealing(1000, 0.001, items, solution2);
 
-  Knapsack* solution3 = new Knapsack(60, std::vector<Item>({items[55], items[100], items[250]}));
+  Knapsack* solution3 = new Knapsack(capacity, std::vector<Item>({items[55], items[100], items[250]}));
   auto to_plot3 = simulated_annealing(1000, 0.001, items, solution3);
 
-  Knapsack* solution4 = new Knapsack(60, std::vector<Item>({items[30], items[13], items[2]}));
+  Knapsack* solution4 = new Knapsack(capacity, std::vector<Item>({items[30], items[13], items[2]}));
   auto to_plot4 = simulated_annealing(1000, 0.001, items, solution4);
 
   Gnuplot gp;
