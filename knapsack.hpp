@@ -57,14 +57,18 @@ class Knapsack {
 
     
 
-    void addOrRemove(Item i) {
+    void addRandom(Item i) {
       std::vector<Item>::iterator _item = std::find(items.begin(), items.end(), i);
       if (_item == items.end()) {
         items.push_back(i);
-      } else {
-        items.erase(_item);
       }
     };
+
+    void removeRandom() {
+      if (items.size() == 0) return;
+      int pos = random() % items.size();
+      items.erase(items.begin());
+    }
 
     float value() {
       float total_weight = 0;
